@@ -1,0 +1,498 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dosya.html</title>
+<script src="script.js"></script>
+<link rel="stylessheet" href="style.css"/>
+<style>
+    .container {
+         width: 30%;
+         max-width: 1200px;
+         margin: 0 auto;
+         padding: 0 20px;
+    }
+    button{
+        background-color: aqua;
+        color: azure;
+        padding: 14px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+    button:hover{
+        opacity: 0.8;
+        background-color:  black;
+    }
+    img{
+        width: 100%;
+        height: auto;
+    }
+    #h2{
+        text-align: center;
+    }
+    #h1{
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <button onclick="hesapla()"> boy kilo hesapla</button>
+        <h2 id="endexresult"></h2>
+        <h1 id="endextext"></h1>
+        <img id="endeximg" alt=""/>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+function hesapla()
+    {
+    let boy = prompt("Boyunuzu Giriniz");
+    let kilo =prompt("Kilonuzu Giriniz");
+    let sonuc = ( kilo / (boy * boy)) * 10000;
+
+    let endexresult=document.getElementById("endexresult");
+    let endextext=document.getElementById("endextext");
+    let endeximg=document.getElementById("endeximg");
+
+    endexresult.innerHTML = "Sonuc:" + sonuc.toFixed(3);
+    endeximg.style.width = "200px";
+    if(sonuc<18.5){
+        endextext.innerHTML = "Zayıf"
+        endeximg.src = "zayif.png";
+        endextext.style.color = "purple";
+    }   else if (sonuc < 25){
+        endextext.innerHTML = "normal"
+        endeximg.src = "normal.png";
+        endextext.style.color = "green";
+    }  else if (sonuc < 30){
+        endextext.innerHTML = "fazla kilolu"
+        endeximg.src = "kilolu.png";
+        endextext.style.color = "orange";
+    }  else {
+        endextext.innerHTML = "obez"
+        endeximg.src = "obez.png";
+        endextext.style.color = "red";
+    }
+
+
+
+
+}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script2.js"></script>
+<link rel="stylessheet" href="style.css"/>
+<style>
+    .container {
+         width: 30%;
+         max-width: 1200px;
+         margin: 0 auto;
+         padding: 0 20px;
+    }
+    button{
+        background-color: olivedrab;
+        color: azure;
+        padding: 14px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+    button:hover{
+        opacity: 0.8;
+        background-color:  black;
+    }
+    img{
+        width: 100%;
+        height: auto;
+    }
+    #h2{
+        text-align: center;
+    }
+    #h1{
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <button onclick="hesapla()"> boy kilo hesapla</button>
+        <h2 id="endexresult"></h2>
+        <h1 id="endextext"></h1>
+        <img id="endeximg" alt=""/>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+function hesapla()
+    {
+    let boy = prompt("Boyunuzu Giriniz");
+    let kilo =prompt("Kilonuzu Giriniz");
+    let sonuc = ( kilo / (boy * boy)) * 10000;
+    let cinsiyet = promt("cinsiyeti giriniz(erkek/kadın)");
+
+    let endexresult=document.getElementById("endexresult");
+    let endextext=document.getElementById("endextext");
+    let endeximg=document.getElementById("endeximg");
+
+
+
+    endexresult.innerHTML = "Sonuc:" + sonuc.toFixed(3);
+    endeximg.style.width = "200px";
+    if(sonuc<18.5){
+        endextext.innerHTML = "Zayıf"
+        endeximg.src = "zayif.png";
+        endextext.style.color = "purple";
+    }   else if (sonuc < 25){
+        endextext.innerHTML = "normal"
+        endeximg.src = "normal.png";
+        endextext.style.color = "green";
+    }  else if (sonuc < 30){
+        endextext.innerHTML = "fazla kilolu"
+        endeximg.src = "kilolu.png";
+        endextext.style.color = "orange";
+    }  else {
+        endextext.innerHTML = "obez"
+        endeximg.src = "obez.png";
+        endextext.style.color = "red";
+    }
+
+  if (cinsiyet == "erkek"){
+    if (sonuc < 18){
+        endexresult.innerHTML = sonuc.toFixed(2);
+        endextext.innerHTML = "Zayıf";
+        endeximg.src = "zayif.png";
+    } else if(sonuc < 25){
+        endexresult.innerHTML = sonuc.toFixed(2);
+        endextext.innerHTML = "normal";
+        endeximg.src = "normal.png";
+    }else if(sonuc < 30){
+        endexresult.innerHTML = sonuc.toFixed(2);
+        endextext.innerHTML = "kilolu";
+        endeximg.src = "kilolu.png";
+    }else if(sonuc < 35){
+        endexresult.innerHTML = sonuc.toFixed(2);
+        endextext.innerHTML = "obez";
+        endeximg.src = "obez.png";
+    }else if(sonuc < 40){
+        endexresult.innerHTML = sonuc.toFixed(2);
+        endextext.innerHTML = "Aşırı obez";
+        endeximg.src = "obez.png";
+    }
+    
+}
+
+ 
+if (cinsiyet == "kadın"){
+    if (sonuc < 16){
+        endexresult.innerHTML = sonuc.toFixed(2);
+        endextext.innerHTML = "Zayıf";
+        endeximg.src = "zayif.png";
+    } else if(sonuc < 22){
+        endexresult.innerHTML = sonuc.toFixed(2);
+        endextext.innerHTML = "normal";
+        endeximg.src = "normal.png";
+    }else if(sonuc < 27){
+        endexresult.innerHTML = sonuc.toFixed(2);
+        endextext.innerHTML = "kilolu";
+        endeximg.src = "kilolu.png";
+    }else if(sonuc < 32){
+        endexresult.innerHTML = sonuc.toFixed(2);
+        endextext.innerHTML = "obez";
+        endeximg.src = "obez.png";
+    }else if (sonuc < 32){
+        endexresult.innerHTML = sonuc.toFixed(2);
+        endextext.innerHTML = "Aşırı obez";
+        endeximg.src = "obez.png";
+    }
+  }
+}
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="script3.js"></script>
+    <style>.container{
+        text-align: center;
+        padding-top: 100px;
+        align-items: center;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    .container .item{
+        background-color: rgb(10, 189, 189);
+        border-radius: 10px;
+        border: 1px solid black;
+        margin-bottom: 10px;
+        padding: 10px;
+        width: 400px;
+    }
+    .hesap{
+        margin-top: 25px;
+    }
+    .item ul{
+        list-style-type: none;
+        padding-left: 0px;
+    }
+    .button{
+        width: 37;
+        margin: 3;
+    }
+    .datatable{
+        width: 100%;
+        margin-top: 10px;
+        border-spacing: 0px;
+    }
+    .datatable thead tr td,
+    .datatable tbody tr td{
+        border: 1px solid black;
+        padding:5px
+    }</style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">
+        <button onclick="hesapmakinasi()">Basit Hesap Makinasi</button>
+        <div id="hesapmakinasi" class="hesap">
+          <label>Hesap Makinasi</label><br />
+          <input type="text" id="inputhesap" /><br /><br />
+          <input type="radio" name="radio" checked /><br/>
+          <input type="radio" name="radio" /><br/>
+          <button onclick="hesapla()">Hesapla</button>
+        </div>
+      </div>
+      <div class="item">
+        <button onclick="uyeekle()">Üye Ekle</button>
+        <ul id="uyeler" class="uyeler"></ul>
+      </div>
+      <div class="item">
+        <button class="btn">Tıklayınız</button>
+        <b>Hava Çok Sıcak</b>
+      </div>
+      <div class="item">
+        <input type="text" class="display" />
+        <div class="btn-group">
+          <button class="button">1</button>
+          <button class="button">2</button>
+          <button class="button">3</button>
+          <button class="button">/</button>
+          <br />
+          <button class="button">4</button>
+          <button class="button">5</button>
+          <button class="button">6</button>
+          <button class="button">*</button>
+          <br />
+          <button class="button">7</button>
+          <button class="button">8</button>
+          <button class="button">9</button>
+          <button class="button">-</button>
+          <br />
+          <button class="button">C</button>
+          <button class="button">0</button>
+          <button class="button">=</button>
+          <button class="button">+</button>
+          <br />
+          <button class="button">00</button>
+          <button class="button">.</button>
+          <button class="button">(</button>
+          <button class="button">)</button>
+        </div>
+      </div>
+      <div class="item">
+        <button class="btn-basla">Başla</button>
+        <h1 class="yaz1"></h1>
+      </div>
+      <div class="item">
+        <button class="btn-basla2">Başla</button>
+        <h1 class="yaz2"></h1>
+      </div>
+      <div class="item">
+        <button class="gelAll">Veri Çek Tümü</button>
+        <table class="datatable">
+          <thead>
+            <tr>
+              <td>#</td>
+              <td>Başlık</td>
+              <td>Açıklama</td>
+            </tr>
+          </thead>
+          <tbody class="alldata"></tbody>
+        </table>
+      </div>
+      <div class="item">
+        <button onclick="fetchdata()">Veri Çek Tümü</button>
+        <table class="datatable">
+          <thead>
+            <tr>
+              <td>#</td>
+              <td>Başlık</td>
+              <td>Açıklama</td>
+            </tr>
+          </thead>
+          <tbody class="alldata2"></tbody>
+        </table>
+      </div>
+      <div class="item">
+        <button onclick="fetchuserdata()">Veri Çek Tümü</button>
+        <div class="content"></div>
+        <table class="datatable">
+          <thead>
+            <tr>
+              <td>#</td>
+              <td>İsim</td>
+              <td>Kullanıcı Adı</td>
+              <td>Email</td>
+            </tr>
+          </thead>
+          <tbody class="alldata3"></tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+
+.container{
+    text-align: center;
+    padding-top: 100px;
+    align-items: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.container.item{
+    background-color: aqua;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 400px;
+}
+.hesap{
+    margin-top: 25px;
+}
+.item ul{
+    list-style-type: none;
+    padding-left: 0px;
+}
+.button{
+    width: 37;
+    margin: 3;
+}
+.datatable{
+    width: 100%;
+    margin-top: 10px;
+    border-spacing: 0px;
+}
+.datatable thead tr td,
+.datatable tbody tr td{
+    border: 1px solid black;
+    padding:5px
+}
+
+
+
+
+
+
+
+/*
+let random = Math.random();
+let min = Math.min(0,1,2,3,4,5,6,7,8,9,10);
+let max = Math.max(0,1,2,3,4,5,6,7,8,9,10);
+let round = Mat.round(3.5);
+*/
+function hesapmakinasi(){
+    let hesapmakinasi = document.getElementById("hesapmakinasi");
+    hesapmakinasi.style.display="none";
+    let hesapmakinasiDurum = false;
+}
+function hesapla(){
+    let inputhesap= document.getElementById("inputhesap");
+    let sonuc = eval(inputhesap.value);
+    inputhesap.value = sonuc;
+}
+/*function uyeekle(){
+    let uyeler = array{
+        {
+            ad:"Ali",
+            kullanici:"Veli",
+            email:"ahmet@gmail.com",
+            cinsiyet:"Erkek",
+        },
+        {
+            ad:"Ayşe",
+            kullanici:"Fatma",
+            email:"ahmet@gmail.com",
+            cinsiyet:"Kadın",
+        },
+        {
+            ad:"Mehmet",
+            kullanici:"Kaya",
+            email:"ahmet@gmail.com",
+            cinsiyet:"Erkek",
+        },
+    };
+        let alldata3 = document.getElementsByClassName(alldata3);
+      for (let i = 0; i < uyeler.length; i++){
+        alldata3[0].innerHTML +=(
+            <tr>
+                <td>S{uyeler[i].ad}</td>
+                <td>S{uyeler[i].kullanıcı}</td>
+                <td>S{uyeler[i].email}</td>
+                <td>S{uyeler[i].cinsiyet}</td>
+            </tr>
+        )
+      }  
+    
+}*/
+document.addEventListener("DOMContentLoaded", function() {
+    var sayi = 2; 
+
+    document.querySelector(".btn-basla").addEventListener("click", function() {
+        var yazi = "merhaba sınıf nasılsınız";
+        setTimeout(function() {
+            document.querySelector(".yaz1").innerHTML = yazi;
+        }, 3000);
+
+        sayi++; 
+
+        setTimeout(function() {
+            document.querySelector(".yaz2").innerHTML = sayi;
+        }, 3000);
+    });
+});
